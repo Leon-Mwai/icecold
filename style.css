@@ -1,6 +1,6 @@
 /* 🌌 Body Styling with Dynamic Background */
 body {
-    background: #8C52FF;
+    background: #1e1e1e;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
@@ -9,199 +9,143 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
-    transition: background 1.5s ease-in-out; /* Smooth transition for background */
+    transition: background 1.5s ease-in-out; /* Smooth background transition */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-/* 🌑 Dark Mode (Default) */
-body {
-    background: #1e1e1e;
     color: white;
-    transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* ☀ Light Mode */
-.light-mode {
-    background: #f4f4f4;
-    color: black;
-}
 
 /* 🎛 Toggle Button */
 #theme-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    background: #8b48d7;
+    background: linear-gradient(135deg, #8b48d7, #debff4);
     color: white;
     font-size: 14px;
+    font-weight: bold;
     transition: all 0.3s ease-in-out;
 }
 
 #theme-toggle:hover {
-    background: #debff4;
+    background: linear-gradient(135deg, #debff4, #8b48d7);
+    transform: scale(1.1);
 }
 
-
-/* 🎭 Weather Fun Fact */
-#weatherFacts{
-    font-style: italic;
-    color: #fff;
-    margin-top: 15px;
-    font-size: 16px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.show-fact {
-    display: block;
-    opacity: 1;
-}
-
-/* 🎯 Weather Container */
+/* ❄ IceCold Container */
 #weather-container {
-    background: rgba(255, 255, 255, 0.2);
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    max-width: 420px;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 40px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 💎 Frosty Glow Effect */
+#weather-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%);
+    animation: frostGlow 5s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes frostGlow {
+    0% { transform: translate(0, 0); opacity: 0.3; }
+    100% { transform: translate(10px, 10px); opacity: 0.6; }
 }
 
 #weather-container:hover {
     transform: scale(1.05);
 }
 
-/* ❄ Titles & Text */
-h2, label, p {
-    color: #fff;
-    margin: 8px 0;
-}
-
-#stay-frosty {
-    font-size: 18px;
-    color: #fff;
-    margin-top: 15px;
+/* ❄ Frosty Title */
+h2 {
+    font-size: 22px;
     font-weight: bold;
-    cursor: pointer;
-    display: inline-block;
-    transition: transform 0.2s ease-in-out;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
 }
 
-/* ✨ Glitch Effect */
-@keyframes glitch {
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(2px, -2px); }
-    60% { transform: translate(-2px, -2px); }
-    80% { transform: translate(2px, 2px); }
-    100% { transform: translate(0, 0); }
+/* ☁ Weather Info */
+#weather-info {
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 12px;
+    word-wrap: break-word;
+    color: white;
 }
 
-.glitch {
-    animation: glitch 0.2s infinite;
+/* 🌡 Temperature Display */
+#temp-div p {
+    font-size: 65px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 5px 10px rgba(255, 255, 255, 0.5);
 }
 
-
-/* ✏ Input Styling */
+/* 🧊 Input Styling */
 input {
     width: calc(100% - 16px);
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
-    border-radius: 10px;
-    border: 1px solid white;
-    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    outline: none;
+    border-color: white;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* 🎛 Button */
 button {
     display: block;
-    margin: 15px auto 0; /* Centering button */
-    background: #debff4;
+    margin: 20px auto 0;
+    background: linear-gradient(135deg, #debff4, #8b48d7);
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    width: 120px;
-    font-size: 15px;
+    width: 130px;
+    font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background: #8b48d7;
+    background: linear-gradient(135deg, #8b48d7, #debff4);
     transform: scale(1.1);
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
-}
-
-/* 🌡 Temperature Display */
-#temp-div p {
-    font-size: 60px;
-    margin-top: 60px;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* ☁ Weather Info */
-#weather-info {
-    font-size: 20px;
-    margin-top: 15px;
-    padding: 10px;
-    word-wrap: break-word;
-    color: white;
-}
-
-/* 🎭 Hourly Forecast */
-#hourly-forecast {
-    margin-top: 40px;
-    padding-top: 10px;
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    justify-content: space-between;
-}
-
-.hourly-item {
-    flex: 0 0 auto;
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 10px;
-    color: white;
-}
-
-.hourly-item img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-}
-
-/* 🌟 Random Fun Fact */
-#weather-fact {
-    font-style: italic;
-    color: #fff;
-    margin-top: 10px;
-    font-size: 16px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.show-fact {
-    display: block;
-    opacity: 1;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.4);
 }
 
 /* ❄ Shivering Animation (For Freezing Temp) */
@@ -230,4 +174,32 @@ button:hover {
     animation: glitch 0.2s infinite;
     color: #00f2ff;
     text-shadow: 2px 2px 4px rgba(0, 242, 255, 0.8);
+}
+
+
+
+/* 🎭 Hourly Forecast */
+#hourly-forecast {
+    margin-top: 40px;
+    padding-top: 10px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.hourly-item img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
 }

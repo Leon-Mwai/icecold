@@ -4,7 +4,12 @@ const weatherFacts = [
     "Antarctica is the driest, windiest, and coldest place on Earth.",
     "The fastest recorded wind speed is 407 km/h (253 mph) in a tornado!",
     "Snowflakes can have over 200 unique shapes.",
+    "Do you have a map? Because I keep getting lost in your forecast.",
+    "Are you made of clouds? Because every time I see you, I just float away.",
+    "Are you a snowstorm? Because you just blew me away!",
+    "Are you the sun? Because you just melted my heart... and possibly the ice caps.",
     "It can actually be too cold to snow—super cold air holds less moisture!"
+    
 ];
 
 // 🚀 Initialize Event Listeners
@@ -25,28 +30,7 @@ function setupGlitchEffect() {
     });
 }
 
-// 🌙 Light & Dark Mode Toggle
-function setupThemeToggle() {
-    const themeToggle = document.getElementById("theme-toggle");
-    const body = document.body;
 
-    // Apply saved theme
-    if (localStorage.getItem("theme") === "light") {
-        body.classList.add("light-mode");
-        themeToggle.textContent = "🌙 Dark Mode";
-    } else {
-        themeToggle.textContent = "☀ Light Mode";
-    }
-
-    // Toggle theme on button click
-    themeToggle.addEventListener("click", () => {
-        body.classList.toggle("light-mode");
-        const isLightMode = body.classList.contains("light-mode");
-        
-        localStorage.setItem("theme", isLightMode ? "light" : "dark");
-        themeToggle.textContent = isLightMode ? "🌙 Dark Mode" : "☀ Light Mode";
-    });
-}
 
 // ☁ Fetch Weather Data
 async function getWeather() {
@@ -114,7 +98,6 @@ function displayWeather(data, city) {
     const tempDivInfo = document.getElementById('temp-div');
     const weatherInfoDiv = document.getElementById('weather-info');
 
-    // Clear previous content
     tempDivInfo.innerHTML = '';
     weatherInfoDiv.innerHTML = '';
 
@@ -125,6 +108,7 @@ function displayWeather(data, city) {
 
     const temperature = data.current_weather.temperature;
     const windSpeed = data.current_weather.windspeed;
+    const weatherCode = data.current_weather.weathercode; // Weather condition code
 
     tempDivInfo.innerHTML = `<p>${temperature}°C</p>`;
     weatherInfoDiv.innerHTML = `
@@ -132,10 +116,11 @@ function displayWeather(data, city) {
         <p>Wind Speed: ${windSpeed} km/h</p>
     `;
 
-    // 🌅 Change background based on temperature & add shivering effect
     updateBackgroundAndEffects(temperature, tempDivInfo);
 
-    // Display Fun Fact
+    // 🥚 Easter Egg Trigger
+    addEasterEggs(city, weatherCode);
+
     displayFunFact();
 }
 
@@ -145,7 +130,7 @@ function updateBackgroundAndEffects(temperature, tempDivInfo) {
 
     if (temperature < 20) {
         body.style.backgroundImage = "url('https://images.unsplash.com/photo-1548195667-1d329af0a472?q=80&w=2127')";
-        tempDivInfo.classList.add("shiver"); // 🥶 Add shivering effect
+        tempDivInfo.classList.add("shiver");
     } else if (temperature >= 20 && temperature <= 30) {
         body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?q=80&w=2071')";
         tempDivInfo.classList.remove("shiver");
@@ -157,4 +142,45 @@ function updateBackgroundAndEffects(temperature, tempDivInfo) {
     body.style.backgroundSize = "cover";
     body.style.backgroundPosition = "center";
     body.style.backgroundRepeat = "no-repeat";
+}
+
+// 🎭 Easter Eggs for Special Weather Conditions
+function addEasterEggs(city, weatherCode) {
+    if (city.toLowerCase().includes("antarctica")) {
+        showPenguin();
+    } else if (city.toLowerCase().includes("sahara")) {
+        showSandstorm();
+    } else if (weatherCode >= 200 && weatherCode < 300) { // Thunderstorm
+        triggerLightning();
+    }
+}
+
+function showPenguin() {
+    let penguin = document.createElement("div");
+    penguin.innerHTML = "🐧";
+    penguin.style.position = "absolute";
+    penguin.style.bottom = "0";
+    penguin.style.left = "-50px";
+    penguin.style.fontSize = "40px";
+    penguin.style.animation = "waddle 5s linear infinite";
+    document.body.appendChild(penguin);
+}
+
+function showSandstorm() {
+    document.body.style.animation = "sandstorm 8s linear infinite";
+}
+
+function triggerLightning() {
+    let flash = document.createElement("div");
+    flash.style.position = "fixed";
+    flash.style.top = "0";
+    flash.style.left = "0";
+    flash.style.width = "100vw";
+    flash.style.height = "100vh";
+    flash.style.background = "rgba(255, 255, 255, 0.7)";
+    flash.style.opacity = "0";
+    flash.style.pointerEvents = "none";
+    flash.style.animation = "lightning-flash 0.3s ease-in-out";
+    document.body.appendChild(flash);
+    setTimeout(() => flash.remove(), 300);
 }
