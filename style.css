@@ -1,0 +1,233 @@
+/* 🌌 Body Styling with Dynamic Background */
+body {
+    background: #8C52FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    transition: background 1.5s ease-in-out; /* Smooth transition for background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 🌑 Dark Mode (Default) */
+body {
+    background: #1e1e1e;
+    color: white;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* ☀ Light Mode */
+.light-mode {
+    background: #f4f4f4;
+    color: black;
+}
+
+/* 🎛 Toggle Button */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #8b48d7;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+#theme-toggle:hover {
+    background: #debff4;
+}
+
+
+/* 🎭 Weather Fun Fact */
+#weatherFacts{
+    font-style: italic;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 16px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.show-fact {
+    display: block;
+    opacity: 1;
+}
+
+/* 🎯 Weather Container */
+#weather-container {
+    background: rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#weather-container:hover {
+    transform: scale(1.05);
+}
+
+/* ❄ Titles & Text */
+h2, label, p {
+    color: #fff;
+    margin: 8px 0;
+}
+
+#stay-frosty {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* ✨ Glitch Effect */
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.glitch {
+    animation: glitch 0.2s infinite;
+}
+
+
+/* ✏ Input Styling */
+input {
+    width: calc(100% - 16px);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* 🎛 Button */
+button {
+    display: block;
+    margin: 15px auto 0; /* Centering button */
+    background: #debff4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 120px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #8b48d7;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 🌡 Temperature Display */
+#temp-div p {
+    font-size: 60px;
+    margin-top: 60px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ☁ Weather Info */
+#weather-info {
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    word-wrap: break-word;
+    color: white;
+}
+
+/* 🎭 Hourly Forecast */
+#hourly-forecast {
+    margin-top: 40px;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+/* 🌟 Random Fun Fact */
+#weather-fact {
+    font-style: italic;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.show-fact {
+    display: block;
+    opacity: 1;
+}
+
+/* ❄ Shivering Animation (For Freezing Temp) */
+@keyframes shiver {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+}
+
+.shiver {
+    animation: shiver 0.2s infinite;
+}
+
+/* ⚡ Glitch Effect on "Stay Frosty, Soldier" */
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.glitch {
+    animation: glitch 0.2s infinite;
+    color: #00f2ff;
+    text-shadow: 2px 2px 4px rgba(0, 242, 255, 0.8);
+}
