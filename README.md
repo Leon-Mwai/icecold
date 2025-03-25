@@ -10,7 +10,6 @@ Icecold is a sleek and interactive weather application that provides real-time w
 ✅ **Dynamic Backgrounds** - The app changes backgrounds based on temperature.  
 ✅ **Shivering Effect** - When it's freezing, the temperature text shivers like it's cold! 🥶  
 ✅ **Fun Weather Facts** - Get a random fun fact every time you check the weather.  
-✅ **Light & Dark Mode** - Switch between light and dark themes.  
 ✅ **Glitch Effect** - Click "Stay Frosty" for a cool glitch animation.  
 
 ## 🌐 APIs Used  
@@ -39,7 +38,7 @@ Icecold is a sleek and interactive weather application that provides real-time w
 
 ## 🎨 UI Preview  
 
-🌞 **Light Mode:**  
+
 🌙 **Dark Mode:**  
 🥶 **Shivering Effect at Low Temperatures**  
 🌟 **Glitch Animation on "Stay Frosty" Click**  
@@ -54,10 +53,6 @@ Icecold is a sleek and interactive weather application that provides real-time w
 ### **2️⃣ Smooth UI/UX**  
 *Creating dynamic effects like shivering temperature text and glitch effects.*  
 ✅ Solution: Added CSS animations and transitions for a sleek, interactive feel.  
-
-### **3️⃣ Light & Dark Mode**  
-*Saving user preferences for theme switching.*  
-✅ Solution: Used **localStorage** to persist user settings.  
 
 ## 💡 Future Improvements  
 
