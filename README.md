@@ -1,6 +1,4 @@
-Here's a clean and structured **README.md** file for your project **Icecold**:
 
----
 
 # ❄️ Icecold - Weather App  
 
