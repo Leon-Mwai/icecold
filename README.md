@@ -44,7 +44,6 @@ Icecold is a sleek and interactive weather application that provides real-time w
 🥶 **Shivering Effect at Low Temperatures**  
 🌟 **Glitch Animation on "Stay Frosty" Click**  
 
-(Add screenshots or GIFs here)  
 
 ## 🔥 Challenges & Solutions  
 
@@ -70,6 +69,3 @@ Icecold is a sleek and interactive weather application that provides real-time w
 
 - **Leon Mwai** | Software Developer  
 
----
-
-Let me know if you need any tweaks! 🚀
