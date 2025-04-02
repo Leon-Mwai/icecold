@@ -3,32 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Icecold</title>
+    <title>IceCold - Stay Frosty</title>
     <link rel="stylesheet" href="./style.css">
-    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: #f0f8ff;
+            text-align: center;
+            background: radial-gradient(circle, rgba(0,10,30,0.9) 10%, rgba(0,0,50,0.8) 80%);
+        }
+        #spline-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.7);
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00d4ff, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            color: white;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 221, 255, 0.5);
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #00d4ff, #007bff);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <div id="weather-container">
-        <h2>Icecold</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
-        
-
-
-        <div id="fun-facts"></div>
-
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-        <div id="wind-animation"></div>
-
-
-        <div id="hourly-forecast"></div>
-        <h3 id="stay-frosty">Stay Frosty Soldier ❄️</h3>
-       
-
+    <div id="spline-container">
+        <iframe src="https://my.spline.design/holographicearthwithdynamiclines-3c5b7ed0de737f6f400f6e4ec5938513/" allowfullscreen style="width: 100%; height: 100%; border: none;"></iframe>
     </div>
- <script src="./script.js"></script> 
+    
+    <div class="content">
+        <h1>IceCold ❄️</h1>
+        <p>Your portal to the frostiest forecasts. Step in and embrace the chill! 🧊</p>
+        <a href="weather.html" class="btn">Enter the Cold</a>
+    </div>
 </body>
 </html>

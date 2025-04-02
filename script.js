@@ -135,7 +135,7 @@ function updateBackgroundAndEffects(temperature, tempDivInfo) {
         body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?q=80&w=2071')";
         tempDivInfo.classList.remove("shiver");
     } else {
-        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1437240443155-612416af4d5a?q=80&w=1974')";
+        body.style.backgroundImage = "url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
         tempDivInfo.classList.remove("shiver");
     }
 
